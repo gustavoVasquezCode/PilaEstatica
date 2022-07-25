@@ -44,3 +44,27 @@ La clase cuenta con varios métodos para poder ejecutar la pila, el cual son los
     }
 ```
 
+**insertarElemento(int elemento):** Con este método se va a agregar elementos a la pila, para ello debe tener un parámetro de valor entero para que se agregue valores en el método main, para ello, primero debemos de hacer una condicional, donde vamos a evaluar el retorno del método estaLlena() y si es verdadero, pues nos mandara un error con un mensaje de que la pila llego a tope, pero si es falso, pues primero incrementamos el atributo "cima" (ni modo que el primer valor se guarde en -1 si no existe en el array XD) en 1 para así agregar el valor en el arreglo, indicando como indice dicho atributo.
+```java
+    public void insertarElemento(int elemento) {
+        if(pilaLlena())
+            System.out.println("La pila esta llena.");
+        else {
+            cima++;
+            pila[cima] = elemento;
+        }
+    }
+```
+
+**quitarElemento():** Con este método, nos ayudara a quitar elementos de la pila de uno en uno, primero debemos de tener una condicional, donde vamos a evaluar el retorno del método pilaVacia(), y si manda verdadero, mandara un mensaje que indica que la pila esta vacia y no se puede quitar elementos que no existen, y si manda falso, imprimira el elemento de la pila con su valor de "cima" actual y despues decrementara.
+``` java
+
+    public void quitarElemento() {
+        if(pilaVacia())
+            System.out.println("La pila esta vacia.");
+        else {
+            System.out.println("Elemento extraido: " + pila[cima]);
+            cima--;
+        }
+    }
+```
